@@ -1,31 +1,30 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ComplianceProblem from '../components/ComplianceProblem.astro';
 
-const title = 'My Astro Blog';
-const description = 'The perfect starter for your perfect blog.';
+const title = 'Dome42';
+const description = 'Simply compliant';
 const permalink = Astro.site.href;
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink}>
   <div class="home-container">
     <div class="home-copy">
-      <h1>Welcome to your new Astro Blog</h1>
-      <p>Check out the docs on <a href="https://www.github.com/Charca/astro-blog-template" target="_blank" rel="noopener">GitHub</a> to get started.</p>
+      <h1>Dome42</h1>
+      <p>The unified platform that makes cybersecurity and compliance simple, automated and accessible</p>
+      <button class="get-started">
+        Get Started
+      </button>
     </div>
 
     <div class="hero-image-container">
       <picture>
-        <source srcset="/assets/home-illustration.webp" media="(min-width: 600px)">
+        <source srcset="public/assets/vectorelements-lBU7MhUv4LQ-unsplash.svg" media="(min-width: 600px)">
         <img class="hero-image" alt="Illustration of person reading a book" src="/assets/home-illustration-small.webp" width="550" height="466">
       </picture>
-      <p class="caption">
-        Illustration by
-        <a href="https://icons8.com/illustrations/author/5c07e68d82bcbc0092519bb6" target="_blank" rel="noopener">Icons 8</a>
-        from
-        <a href="https://icons8.com/illustrations" target="_blank" rel="noopener">Ouch!</a>
-      </p>
     </div>
   </div>
+  <ComplianceProblem />
 </BaseLayout>
 
 <style>
@@ -73,6 +72,23 @@ const permalink = Astro.site.href;
     width: 100%;
     max-width: 550px;
     margin-bottom: 1em;
+  }
+
+  .get-started {
+    background-color: #3730a3;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1em;
+  }
+
+  .get-started:hover {
+    background-color: #4f46e5;
   }
 
   @media (max-width: 1200px) {
