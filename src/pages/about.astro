@@ -9,33 +9,51 @@ const team = [
   {
     name: "Tommaso Lovergine",
     role: "Co-founder & CEO",
-    description: "MSc in Telecommunication Engineering with 6+ years in Cyber Security."
+    description: "MSc in Telecommunication Engineering with 6+ years in Cyber Security.",
+    image: "/assets/team/TommasoLovergine.JPG"
   },
   {
     name: "Mattia Borino",
     role: "Co-founder & Head of Operations",
-    description: "MSc in Telecommunication Engineering with 5+ years of field experience."
+    description: "MSc in Telecommunication Engineering with 5+ years of field experience.",
+    image: "/assets/team/MattiaBorino.jpg"
   },
   {
     name: "Andrea Lunaro",
     role: "Head of Product",
-    description: "Expert in safety-critical control design and regulatory compliance (EASA/FAA)."
+    description: "Expert in safety-critical control design and regulatory compliance (EASA/FAA).",
+    image: "/assets/team/AndreaLunaro.jpeg"
   },
   {
     name: "Juan Sánchez Nieto",
     role: "Head of AI",
-    description: "Specialist in Machine Learning and data-centric AI solutions."
+    description: "Specialist in Machine Learning and data-centric AI solutions.",
+    image: "/assets/team/JuanSanchezNieto.jpeg"
   },
   {
     name: "Aurora Rosato",
     role: "Head of Research & Growth",
-    description: "PhD in Biomedical Engineering."
+    description: "PhD in Biomedical Engineering.",
+    image: "/assets/team/AuroraRosato.jpg"
   },
   {
     name: "Francesco Battista",
     role: "Head of Technical Development",
-    description: "MSc in Information Engineering and UI/UX expert."
+    description: "MSc in Information Engineering and UI/UX expert.",
+    image: "/assets/team/FrancescoBattista.jpeg"
   },
+    {
+    name: "Manfredi Domina",
+    role: "Strategic Advisor",
+    description: "CEO of Keplera.",
+    image: "/assets/team/ManfrediDomina.jpg"
+  },
+  {
+    name: "Anastasia Gervasi",
+    role: "Strategic Advisor",
+    description: "HR & Digital Innovation.",
+    image: "/assets/team/AnastasiaGervasi.jpeg"
+  }
 ];
 ---
 
@@ -62,15 +80,12 @@ const team = [
       <div class="team-grid">
         {team.map(member => (
           <div class="team-member-card">
-            <div class="image-placeholder"></div>
+            <img src={member.image} alt={`Photo of ${member.name}`} class="team-member-image" />
             <h3 class="member-name">{member.name}</h3>
             <p class="member-role">{member.role}</p>
             <p class="member-description">{member.description}</p>
           </div>
         ))}
-      </div>
-      <div class="advisors">
-        <p>We are also supported by strategic advisors including <strong>Manfredi Domina</strong> (CEO of Keplera) and <strong>Anastasia Gervasi</strong> (HR & Digital Innovation).</p>
       </div>
     </section>
 
@@ -167,12 +182,12 @@ const team = [
     padding: 2rem;
     text-align: center;
   }
-  .image-placeholder {
+  .team-member-image {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background-color: var(--border-color);
     margin: 0 auto 1.5rem;
+    object-fit: cover;
   }
   .member-name {
     font-size: 1.3rem;
