@@ -6,22 +6,31 @@ const { current = '' } = Astro.props;
 ---
 
 <style>
-  header {
+  .header-wrapper {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+  }
+  
+  .site-header {
     display: flex;
-    margin: 0 auto;
-    max-width: 1400px;
-    padding: 2em;
-    width: 100%;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 999px; /* Pill shape */
+    transition: all 0.3s ease;
+    width: auto;
+    background-color: rgba(17, 17, 21, 0.6);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(25px);
   }
 
-  @media screen and (max-width: 520px) {
-    header {
-      padding: 2em 0;
-    }
-  }
 </style>
 
-<header>
-  <Logo />
-  <Nav current={current} />
-</header>
+<div class="header-wrapper" id="header-wrapper">
+  <header class="site-header">
+    <Logo />
+    <Nav current={current} />
+  </header>
+</div>

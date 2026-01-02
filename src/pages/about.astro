@@ -1,48 +1,222 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = 'About';
-const description = 'About your blog.';
+const title = 'About Dome42';
+const description = 'Dome42 is a unified SaaS platform designed to make cybersecurity and regulatory compliance simple, automated, and accessible for Europe\'s Small and Medium Enterprises (SMEs).';
 const permalink = `${Astro.site.href}about`;
+
+const team = [
+  {
+    name: "Tommaso Lovergine",
+    role: "Co-founder & CEO",
+    description: "MSc in Telecommunication Engineering with 6+ years in Cyber Security."
+  },
+  {
+    name: "Mattia Borino",
+    role: "Co-founder & Head of Operations",
+    description: "MSc in Telecommunication Engineering with 5+ years of field experience."
+  },
+  {
+    name: "Andrea Lunaro",
+    role: "Head of Product",
+    description: "Expert in safety-critical control design and regulatory compliance (EASA/FAA)."
+  },
+  {
+    name: "Juan Sánchez Nieto",
+    role: "Head of AI",
+    description: "Specialist in Machine Learning and data-centric AI solutions."
+  },
+  {
+    name: "Aurora Rosato",
+    role: "Head of Research & Growth",
+    description: "PhD in Biomedical Engineering."
+  },
+  {
+    name: "Francesco Battista",
+    role: "Head of Technical Development",
+    description: "MSc in Information Engineering and UI/UX expert."
+  },
+];
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} current="about">
-  <div class="container">
-    <h1>About</h1>
-    <figure class="about-image">
-      <img src="/assets/about-illustration.webp" alt="Illustration of a notebook" width="330">
-      <figcaption>
-        Illustration by
-        <a href="https://icons8.com/illustrations/author/5c07e68d82bcbc0092519bb6" target="_blank" rel="noopener">Icons 8</a>
-        from
-        <a href="https://icons8.com/illustrations" target="_blank" rel="noopener">Ouch!</a>
-      </figcaption>
-    </figure>
-    <p>Text placeholder via <a href="https://jeffsum.com/" target="_blank">Jeffsum</a>.</p>
-    <p>So you two dig up, dig up dinosaurs? What do they got in there? King Kong? My dad once told me, laugh and the world laughs with you, Cry, and I'll give you something to cry about you little bastard! Life finds a way. God creates dinosaurs. God destroys dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs.</p>
-    <p>You really think you can fly that thing? You know what? It is beets. I've crashed into a beet truck. Forget the fat lady! You're obsessed with the fat lady! Drive us out of here! Is this my espresso machine? Wh-what is-h-how did you get my espresso machine?</p>
-    <p>Hey, you know how I'm, like, always trying to save the planet? Here's my chance. Hey, take a look at the earthlings. Goodbye! I was part of something special. Just my luck, no ice. You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager?</p>
-    <p>Jaguar shark! So tell me - does it really exist? This thing comes fully loaded. AM/FM radio, reclining bucket seats, and... power windows. Yes, Yes, without the oops! You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager?</p>
-    <p>Yes, Yes, without the oops! Do you have any idea how long it takes those cups to decompose. They're using our own satellites against us. And the clock is ticking. Do you have any idea how long it takes those cups to decompose. My dad once told me, laugh and the world laughs with you, Cry, and I'll give you something to cry about you little bastard!</p>
+  <div class="about-page">
+    <section id="story" class="content-section">
+      <div class="section-header">
+        <span class="eyebrow">Our Story</span>
+        <h1>Democratizing Cybersecurity</h1>
+      </div>
+      <div class="content-body">
+        <p class="lead">Dome42 is a unified SaaS platform designed to make cybersecurity and regulatory compliance simple, automated, and accessible for Europe's Small and Medium Enterprises (SMEs).</p>
+        <p>In an increasingly complex digital landscape, we believe high-level security shouldn't be a luxury reserved for large corporations, but a standard accessible to the industrial backbone of Europe.</p>
+        <p>European SMEs are currently facing a "perfect storm": strict new regulations (such as <strong>NIS2, GDPR, CRA, and DORA</strong>) combined with rising cyber threats. The traditional solution—hiring expensive manual consultants—is slow, costly, and hard to scale.</p>
+        <p>Our goal is to democratize this process. We provide an <strong>AI-Powered CISO (Chief Information Security Officer)</strong> that works alongside your business 24/7, automating the bureaucracy of compliance and ensuring continuous protection without the high cost of human intervention.</p>
+      </div>
+    </section>
+
+    <section id="team" class="content-section">
+      <div class="section-header">
+        <span class="eyebrow">The Team</span>
+        <h2>Built by Experts</h2>
+      </div>
+      <div class="team-grid">
+        {team.map(member => (
+          <div class="team-member-card">
+            <div class="image-placeholder"></div>
+            <h3 class="member-name">{member.name}</h3>
+            <p class="member-role">{member.role}</p>
+            <p class="member-description">{member.description}</p>
+          </div>
+        ))}
+      </div>
+      <div class="advisors">
+        <p>We are also supported by strategic advisors including <strong>Manfredi Domina</strong> (CEO of Keplera) and <strong>Anastasia Gervasi</strong> (HR & Digital Innovation).</p>
+      </div>
+    </section>
+
   </div>
 </BaseLayout>
 
 <style>
-  .about-image {
-    float: right;
-    margin: -3em -7em 2em 2em;
-    max-width: 300px;
+  .about-page {
+    padding-top: 4rem;
   }
 
-  .about-image img {
-    border-radius: 8px;
-    margin-bottom: 1.5em;
+  .content-body .lead {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-main);
   }
 
-  @media (max-width: 1020px) {
-    .about-image {
-      float: none;
-      margin: 0 auto 2em;
-    }
+  /* General Content Section Styling */
+  .content-section {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .content-section:last-of-type {
+    border-bottom: none;
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .eyebrow {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+  .section-header h1 {
+    font-size: 3.5rem;
+  }
+  .section-header h2 {
+    font-size: 2.5rem;
+  }
+  .content-body {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .content-body p, .content-body ul {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+  }
+  .content-body h3 {
+    font-size: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+  }
+  .content-body strong {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+
+  /* AI Agents */
+  .agents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .agent-card {
+    background: var(--background-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+  }
+  .agent-card h4 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+
+  /* Team Section */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+  }
+  .team-member-card {
+    background: var(--background-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+  }
+  .image-placeholder {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: var(--border-color);
+    margin: 0 auto 1.5rem;
+  }
+  .member-name {
+    font-size: 1.3rem;
+    color: var(--text-main);
+    margin: 0;
+  }
+  .member-role {
+    color: var(--primary-color);
+    margin: 0.25rem 0 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .member-description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+  .advisors {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 1rem;
+    color: var(--text-secondary);
+  }
+
+  /* Contact Section */
+  .contact-section {
+    text-align: center;
+    padding: 4rem 0;
+  }
+  .contact-section h2 {
+    font-size: 2.5rem;
+  }
+  .contact-section p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+  }
+  .contact-details {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+  }
+  .contact-details a {
+    font-size: 1.1rem;
+    font-weight: 600;
   }
 </style>

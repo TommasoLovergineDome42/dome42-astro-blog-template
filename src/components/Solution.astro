@@ -1,0 +1,134 @@
+---
+// src/components/Solution.astro
+const features = [
+  {
+    title: "Supply Chain Security",
+    description: "Automatic assessment of the security posture of the supply chain.",
+    how: "Cross-tenant integration and dedicated pages for suppliers.",
+    benefit: "Build a chain of trust with your suppliers."
+  },
+  {
+    title: "Compliance Automation",
+    description: "Automatic analysis and drafting of compliance documents.",
+    how: "AI agents and ready-to-use custom models.",
+    benefit: "Drastic reduction in documentation preparation time."
+  },
+  {
+    title: "Incident Response",
+    description: "Fast, automatic, and detailed incident reporting.",
+    how: "Integration with AI and ticketing platforms like Splunk or Azure Sentinel.",
+    benefit: "Minimized response times in case of security incidents."
+  }
+];
+---
+
+<section class="solution-section">
+  <div class="section-header">
+    <span class="eyebrow">The Solution</span>
+    <h2>The AI-Powered CISO</h2>
+    <p class="tagline">Fast, automatic, and error-proof compliance.</p>
+  </div>
+
+  <div class="features-grid">
+    {features.map(feature => (
+      <div class="feature-card">
+        <h3>{feature.title}</h3>
+        <p class="description">{feature.description}</p>
+        
+        <div class="detail-box">
+          <p><strong>How:</strong> {feature.how}</p>
+          <p class="benefit"><strong>Benefit:</strong> {feature.benefit}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .solution-section {
+    padding: 6rem 0;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .eyebrow {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: 2.8rem;
+    max-width: 700px;
+    margin: 0 auto 1rem;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .feature-card {
+    background: rgba(17, 17, 21, 0.4);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(84, 142, 155, 0.2);
+  }
+
+  h3 {
+    font-size: 1.6rem;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .detail-box {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 1rem;
+  }
+
+  .detail-box p {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+  }
+  
+  .detail-box p strong {
+    color: var(--text-main);
+  }
+
+  .benefit {
+    color: var(--primary-color);
+  }
+</style>

@@ -1,16 +1,29 @@
 <style>
-  img {
-    display: block;
-    width: 75px;
+  .logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+  }
+  
+  .logo-image {
+    height: 30px;
+    width: auto;
   }
 
-  @media screen and (max-width: 520px) {
-    img {
-      display: none;
-    }
+  .logo-text {
+    font-size: 1.5em;
+    font-weight: 800;
+    color: var(--text-main);
+    line-height: 1;
+  }
+
+  .logo-text span {
+    color: var(--primary-color);
   }
 </style>
 
-<a href="/">
-  <img alt="Blog Logo" src="/assets/dome42 logo.webp" width="75" height="50" />
+<a href="/" class="logo-link">
+  <img src="/assets/dome42 logo.webp" alt="Dome42 Logo" class="logo-image" />
+  <span class="logo-text">Dome<span>42</span></span>
 </a>

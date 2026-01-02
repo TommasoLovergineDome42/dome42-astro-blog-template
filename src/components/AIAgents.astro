@@ -1,0 +1,78 @@
+---
+---
+<section id="technology" class="content-section">
+    <div class="section-header">
+        <span class="eyebrow">Our Technology</span>
+        <h2>Meet Our AI Agents</h2>
+        <p class="subtitle">Unlike generic AI wrappers, our system utilizes specialized agents to ensure accuracy and eliminate hallucinations.</p>
+    </div>
+    <div class="agents-grid">
+        <div class="agent-card">
+            <h4>Kevin (The Ingestor)</h4>
+            <p>Handles the extraction of raw data from your documents, converting it into a standardized, normalized form without rephrasing or misinterpretation.</p>
+        </div>
+        <div class="agent-card">
+            <h4>Ingrid (The Analyst)</h4>
+            <p>Maps your internal documents against complex regulations (like NIS2) to perform automatic gap analysis and draft compliance paperwork.</p>
+        </div>
+        <div class="agent-card">
+            <h4>Philip (The Monitor)</h4>
+            <p>Ensures quality control by evaluating results against strict thresholds. Philip provides confidence scores to ensure the system gets smarter over time and remains "bullet-proof" for auditors.</p>
+        </div>
+    </div>
+</section>
+
+<style>
+.content-section {
+    padding: 6rem 0;
+}
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.eyebrow {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+}
+.section-header h2 {
+    font-size: 2.8rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.section-header .subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 1rem auto 0;
+}
+
+.agents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.agent-card {
+    background: rgba(17, 17, 21, 0.4);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+    backdrop-filter: blur(20px);
+}
+.agent-card h4 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+.agent-card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+</style>

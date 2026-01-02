@@ -10,14 +10,14 @@ const regulations = [
 ---
 
 <section class="compliance-section">
-  <div class="header">
-    <h2>A perfect storm is coming</h2>
+  <div class="section-header">
+    <span class="eyebrow">The Challenge</span>
+    <h2>A perfect storm is coming for compliance</h2>
   </div>
 
   <div class="grid-container">
     <div class="stats-col">
-      <div class="stat-item stat-card">
-
+      <div class="card regulations-card">
         <div class="icons-row">
           {regulations.map(reg => (
             <div class="icon-wrapper">
@@ -25,126 +25,113 @@ const regulations = [
             </div>
           ))}
         </div>
-        <p>New regulations with complex legal obligations and severe penalties</p>
+        <p>New regulations bring complex legal obligations and severe penalties.</p>
       </div>
 
       <div class="stats-grid">
-        <div class="stat-item stat-card">
+        <div class="card stat-card">
           <div class="stat-number">85%</div>
-          <p>Of companies today would not pass a compliance audit <sup>[1]</sup></p>
+          <p>Of companies would not pass a compliance audit today.</p>
         </div>
-
-        <div class="stat-item stat-card">
+        <div class="card stat-card">
           <div class="stat-number">30%</div>
-          <p>More vulnerable to cyber attacks when you're not compliant <sup>[2]</sup></p>
+          <p>More vulnerable to cyber attacks when not compliant.</p>
         </div>
       </div>
     </div>
 
-    <div class="dilemma-col">
-      <p class="dilemma-label">The dilemma</p>
+    <div class="card dilemma-col">
+      <span class="eyebrow">The Dilemma</span>
       <h3>To be or not to be (compliant)</h3>
-      
       <div class="dilemma-content">
         <p>
-          To be compliant <strong class="highlight">costs time and resources</strong> 
-          without generating income.
+          Achieving compliance <strong class="highlight">costs significant time and resources</strong> without directly generating income.
         </p>
         <p class="risk-text">
-          Fail to comply means risking a fine (up to <strong class="highlight">€10 million</strong>) 
-          and <strong class="highlight">being forced out of the market.</strong>
+          Failing to comply means risking fines up to <strong class="highlight">€10 million</strong> and being <strong class="highlight">forced out of the market.</strong>
         </p>
       </div>
     </div>
   </div>
-
-  <footer class="sources">
-    <p>[1] Rapporto Cyber Index PMI - ACN</p>
-    <p>[2] Cost of a Data Breach Report 2023 - 2025</p>
-  </footer>
 </section>
 
 <style>
   .compliance-section {
-    --dilemma-bg: rgba(0, 0, 0, 0.03);
-    --border-color: rgba(0, 0, 0, 0.1);
-    margin: 4rem 0;
-    color: var(--text-main);
+    padding: 6rem 0;
   }
-  :global(.theme-dark) .compliance-section {
-    --dilemma-bg: rgba(255, 255, 255, 0.05);
-    --border-color: rgba(255, 255, 255, 0.15);
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .eyebrow {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
   }
 
   h2 {
-    font-size: 2.2rem;
-    margin-bottom: 3rem;
+    font-size: 2.8rem;
+    max-width: 700px;
+    margin: 0 auto;
   }
 
   .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
   }
 
-  @media (max-width: 768px) {
-    .grid-container { grid-template-columns: 1fr; }
+  .card {
+    background: rgba(17, 17, 21, 0.4);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+    backdrop-filter: blur(20px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  /* Statistiche */
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Stats Column */
   .stats-col {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
-  .stat-card {
-    background: var(--dilemma-bg);
-    padding: 1.5rem;
-    border-radius: 12px;
+  .regulations-card p {
     text-align: center;
-  }
-  
-  .stat-item > p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-top: 0.5rem;
-  }
-
-  .stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-
-  @media (max-width: 500px) {
-    .stats-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .stat-number {
-    font-size: 3.5rem;
-    font-weight: 800;
-    line-height: 1;
-    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
   }
 
   .icons-row {
     display: flex;
-    gap: 10px;
-    margin: 1rem 0;
+    gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
   }
 
   .icon-wrapper {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    padding: 4px;
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .icon-wrapper img {
@@ -153,41 +140,64 @@ const regulations = [
     object-fit: contain;
   }
 
-  /* Dilemma */
-  .dilemma-col {
-    background: var(--dilemma-bg);
-    padding: 2rem;
-    border-radius: 12px;
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
   }
 
-  .dilemma-label { font-style: italic; opacity: 0.8; }
-  
-  h3 { font-size: 1.6rem; margin-bottom: 1.5rem; }
+  .stat-card {
+    text-align: center;
+  }
 
-  .highlight {
-    color: #ff4d6d; /* Colore d'impatto per i rischi */
+  .stat-number {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
   }
   
-  .dilemma-content > p {
-    font-size: 1.2rem;
+  .stat-card p {
+    font-size: 1rem;
     line-height: 1.5;
   }
 
+  /* Dilemma Column */
+  .dilemma-col h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+  }
+  
+  .dilemma-content p {
+    font-size: 1.1rem;
+  }
+
+  .highlight {
+    color: var(--primary-color);
+    font-weight: 700;
+  }
+  
   .risk-text {
-    margin-top: 2rem;
-    font-size: 1.2rem;
+    margin-top: 1.5rem;
   }
 
-  .sources {
-    margin-top: 3rem;
-    font-size: 0.75rem;
-    opacity: 0.6;
-    border-top: 1px solid var(--border-color);
-    padding-top: 1rem;
+  @media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
   }
 
-  .sources p {
-    margin: 0.5rem 0;
-    font-size: 0.75rem;
+  @media (max-width: 500px) {
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+    h2 {
+        font-size: 2.2rem;
+    }
+    .card {
+        padding: 2rem;
+    }
   }
 </style>
