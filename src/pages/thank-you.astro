@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Message Sent!';
+const description = 'Thank you for contacting us.';
+const permalink = `${Astro.site.href}thank-you`;
+---
+
+<BaseLayout title={title} description={description} permalink={permalink}>
+  <div class="thank-you-page">
+    <h1>Message Sent!</h1>
+    <p>Thank you for contacting us. We'll get back to you as soon as possible.</p>
+    <a href="/" class="home-button">Back to Homepage</a>
+  </div>
+</BaseLayout>
+
+<style>
+  .thank-you-page {
+    text-align: center;
+    padding: 8rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin-bottom: 3rem;
+  }
+
+  .home-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .home-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(84, 142, 155, 0.3);
+  }
+</style>
